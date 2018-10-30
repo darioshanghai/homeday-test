@@ -1,1 +1,6 @@
-<p>Partial template</p>
+<h1>Github workflow test</h1>
+<p>Enter the required information below, click on continue.
+<br>
+You'll be asked to enter your email address and agree to our terms of service. Please do so and click on "Done".
+</p>
+<p>Information from your Github account will be displayed. Enjoy!</p>
