@@ -17,7 +17,7 @@
 		<input type="text" size="30" name="surname" pattern="[A-Za-z]+" required>
 		<br>
 		<label>Github username:</label>
-		<input type="text" size="30" name="username" required>
+		<input type="text" size="30" name="username" pattern="[A-Za-z0-9]+" required>
 		<br>
 		<input type="submit" value="Continue">
 	</p>
