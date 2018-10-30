@@ -1,6 +1,24 @@
-<h1>Github workflow test</h1>
-<p>Enter the required information below, click on continue.
-<br>
-You'll be asked to enter your email address and agree to our terms of service. Please do so and click on "Done".
-</p>
-<p>Information from your Github account will be displayed. Enjoy!</p>
+<div class="introduction">
+	<h1>Github workflow test</h1>
+	<p>Enter the required information below, click on continue.
+	<br>
+	You'll be asked to enter your email address and agree to our terms of service. Please do so and click on "Done".
+	</p>
+	<p>Information from your Github account will be displayed. Enjoy!</p>
+</div>
+
+
+<form class="user-data" action="/email" method="post">
+	<p>
+		<label>First Name:</label>
+		<input type="text" size="30" name="first-name" pattern="[A-Za-z]+" required>
+		<br>
+		<label>Surname:</label>
+		<input type="text" size="30" name="surname" pattern="[A-Za-z]+" required>
+		<br>
+		<label>Github username:</label>
+		<input type="text" size="30" name="username" required>
+		<br>
+		<input type="submit" value="Continue">
+	</p>
+</form>

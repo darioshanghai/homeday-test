@@ -1,0 +1,10 @@
+<form class="user-email" action="/user-github-data" method="post">
+	<p>
+		<label>Email address:</label>
+		<input type="email" size="30" name="email" required>
+		<br>
+		<input type="checkbox" required>
+		<label>I accept the <a href="#">terms and conditions</a> of this service</label>
+		<input type="submit" value="Done">
+	</p>
+</form>
