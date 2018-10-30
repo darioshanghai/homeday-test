@@ -15,7 +15,9 @@ var app = Sammy('#main',
 		
 		this.post('/email', function(context){
 			context.partial('templates/_email.template');
-			this.log("/email is here");
+		});
+		this.post('/user-github-data', function(context){
+			context.partial('templates/_github-data.template');
 		});
 	});
 
