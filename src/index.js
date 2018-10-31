@@ -8,11 +8,7 @@ var app = Sammy('#main',
 	function(){
 		this.use('Template');
 		this.use('Session');
-		
-		this.get('', function(context) {
-			context.partial('templates/_landing.template');
-		});
-		
+
 		this.post('/email', function(context){
 			context.partial('templates/_email.template');
 			const user = this.session('user', function() {
@@ -21,13 +17,25 @@ var app = Sammy('#main',
 			user['first-name']= this.params['first-name'];
 			user.surname = this.params['surname'];
 			user.username = this.params['username'];
+			user["github-url"] = 'https://api.github.com/users/' + user.username;
 			this.session('user', user);
 
 		});
 		this.post('/user-github-data', function(context){
 			const user = this.session('user');
-			context.partial('templates/_github-data.template', {user: user});
-			this.log('data: ', user);
+			user.email = this.params['email'];
+			$.ajax({
+				url: user["github-url"],
+				dataType: 'json',
+				success: function(userData) {
+						user.avatar = userData.avatar_url;
+						context.partial('templates/_github-data.template', {user: user});
+				}
+			})
+		});
+
+		this.get('', function(context) {
+			context.partial('templates/_landing.template');
 		});
 	});
 

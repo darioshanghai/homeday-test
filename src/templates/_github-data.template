@@ -1,8 +1,9 @@
 <div class="github-info">
-	<img src=<%= user.avatar %> alt="<%= user.username %>'s avatar">
+	<img src="<%= user.avatar %>" alt="<%= user.username %>'s avatar">
 	<p>
 		Name: <%= user['first-name'] %><br>
 		Surname:  <%= user.surname %><br>
 		Username:  <%= user.username %><br>
+		Email:  <%= user.email %><br>
 	</p>
 </div>
