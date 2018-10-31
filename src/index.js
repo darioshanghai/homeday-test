@@ -15,9 +15,19 @@ var app = Sammy('#main',
 		
 		this.post('/email', function(context){
 			context.partial('templates/_email.template');
+			const user = this.session('user', function() {
+				return {}
+			});
+			user['first-name']= this.params['first-name'];
+			user.surname = this.params['surname'];
+			user.username = this.params['username'];
+			this.session('user', user);
+
 		});
 		this.post('/user-github-data', function(context){
-			context.partial('templates/_github-data.template');
+			const user = this.session('user');
+			context.partial('templates/_github-data.template', {user: user});
+			this.log('data: ', user);
 		});
 	});
 
